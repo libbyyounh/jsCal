@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JS Calculator</title>
+<style type="text/css">
+	p{
+		font-size: 2em;
+		text-align: center;
+	}
+	#panel{
+		background: grey;
+		width: 600px;
+		height: 300px;
+		margin: 0 auto;
+	}
+	#text{
+		width: 210px;
+		height: 25px;
+		margin-left: 2px;
+		margin-top: 10px;
+		border: 1px solid #000;
+	}
+	input{
+		width: 50px;
+		height: 50px;
+		margin-top: 2px;
+	}
+	#cal{
+		position: relative;
+		width: 220px;
+		margin: 12px auto;
+		background: black;
+	}
+
+</style>
+<script type="text/javascript">
+/*
+	javascript calculator, 
+	code by Younh.
+	date:2014/3/17
+*/
+var showOneNum=0,showMulNum = 0;//声明存储个位数的变量，以及存储十位数以上的变量
+var status = 0;//判断个位数以及十位数以上的状态
+var op = 0;//操作符状态
+var num1=0,num2=0;//存储两数，以方便进行计算
+	window.onload=function(){
+		Cancel();
+	}
+	function Equal(){
+
+		num2 = document.getElementById('text').value;
+
+		if (op==1) {
+			document.getElementById('text').value=Number(num1)+Number(num2);
+		}
+		else if (op==2) {
+			document.getElementById('text').value=Number(num1)-Number(num2);
+		}
+		else if (op==3) {
+			document.getElementById('text').value=Number(num1)*Number(num2);
+		}
+		else if (op==4) {
+			document.getElementById('text').value=Number(num1)/Number(num2);
+		}
+	}
+	function ShowNum(num){
+		
+		switch(num){
+			case "0":{
+				if (status==0) {
+					showOneNum = showOneNum*10+0;
+					status=1;
+					document.getElementById('text').value=showOneNum;
+					
+				}
+				else{
+					showMulNum=(document.getElementById('text').value)*10+0;
+					document.getElementById('text').value=showMulNum;
+					
+				}
+				break;
+			}
+			case "1":{
+				if (status==0) {
+					showOneNum = showOneNum*10+1;
+					status=1;
+					document.getElementById('text').value=showOneNum;
+				}
+				else if(status==1){
+					showMulNum=(document.getElementById('text').value)*10+1;
+					document.getElementById('text').value=showMulNum;
+				}
+				break;
+			}
+			case "2":{
+				if (status==0) {
+					showOneNum = showOneNum*10+2;
+					status=1;
+					document.getElementById('text').value=showOneNum;
+					
+				}
+				else{
+					showMulNum=(document.getElementById('text').value)*10+2;
+					document.getElementById('text').value=showMulNum;
+					
+				}
+				break;
+			}
+			case "3":{
+				if (status==0) {
+					showOneNum = showOneNum*10+3;
+					status=1;
+					document.getElementById('text').value=showOneNum;
+				}
+				else{
+					showMulNum=(document.getElementById('text').value)*10+3;
+					document.getElementById('text').value=showMulNum;
+				}
+				break;
+			}
+			case "4":{
+				if (status==0) {
+					showOneNum = showOneNum*10+4;
+					status=1;
+					document.getElementById('text').value=showOneNum;
+				}
+				else{
+					showMulNum=(document.getElementById('text').value)*10+4;
+					document.getElementById('text').value=showMulNum;
+				}
+				break;
+			}
+			case "5":{
+				if (status==0) {
+					showOneNum = showOneNum*10+5;
+					status=1;
+					document.getElementById('text').value=showOneNum;
+				}
+				else{
+					showMulNum=(document.getElementById('text').value)*10+5;
+					document.getElementById('text').value=showMulNum;
+				}
+				break;
+			}
+			case "6":{
+				if (status==0) {
+					showOneNum = showOneNum*10+6;
+					status=1;
+					document.getElementById('text').value=showOneNum;
+				}
+				else{
+					showMulNum=(document.getElementById('text').value)*10+6;
+					document.getElementById('text').value=showMulNum;
+				}
+				break;
+			}
+			case "7":{
+				if (status==0) {
+					showOneNum = showOneNum*10+7;
+					status=1;
+					document.getElementById('text').value=showOneNum;
+				}
+				else{
+					showMulNum=(document.getElementById('text').value)*10+7;
+					document.getElementById('text').value=showMulNum;
+				}
+				break;
+			}
+			case "8":{
+				if (status==0) {
+					showOneNum = showOneNum*10+8;
+					status=1;
+					document.getElementById('text').value=showOneNum;
+				}
+				else{
+					showMulNum=(document.getElementById('text').value)*10+8;
+					document.getElementById('text').value=showMulNum;
+				}
+				break;
+			}
+			case "9":{
+				if (status==0) {
+					showOneNum = showOneNum*10+9;
+					status=1;
+					document.getElementById('text').value=showOneNum;
+				}
+				else{
+					showMulNum=(document.getElementById('text').value)*10+9;
+					document.getElementById('text').value=showMulNum;
+				}
+				break;
+			}
+		}
+
+	}
+	function Cancel(){
+		status = 0;
+		
+		showOneNum=0;
+		showMulNum =0;
+		num1=0;
+		num2=0;
+		op=0;
+		document.getElementById('text').value="";
+	}
+	function Add(){
+	
+		num1=document.getElementById('text').value;
+			status=0;
+			showOneNum=0;
+			showMulNum=0;
+			op=1;
+			
+	}
+	function Sub(){
+		num1=document.getElementById('text').value;
+			status=0;
+			showOneNum=0;
+			showMulNum=0;
+			op=2;
+		
+	}
+	function Mul(){
+		num1=document.getElementById('text').value;
+			status=0;
+			showOneNum=0;
+			showMulNum=0;
+			op=3;
+	}
+	function Div(){
+		num1=document.getElementById('text').value;
+			status=0;
+			showOneNum=0;
+			showMulNum=0;
+			op=4;
+	}
+
+</script>
+</head>
+
+<body>
+<p><strong>Javascript Calculator</strong></p>
+<!--<button id="btn" onclick="alert('showOneNum:'+showOneNum+'@showMulNum:'+showMulNum+'@status:'+status+'@op:'+op+'@num1:'+num1+'@num2:'+num2)">Check</button>-->
+<div id="panel">
+	<div id="cal">
+	<table>
+		<tr><input type="text" id="text" disabled="disabled" /></tr>
+		<tr>
+			<td><input type="button" id="btn7" value="7" onclick="ShowNum('7')" /></td>
+			<td><input type="button" id="btn8" value="8" onclick="ShowNum('8')"/></td>
+			<td><input type="button" id="btn9" value="9" onclick="ShowNum('9')"/></td>
+			<td><input type="button" id="btnAdd" value="+" onclick="Add()"/></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="btn4" value="4" onclick="ShowNum('4')"/></td>
+			<td><input type="button" id="btn5" value="5" onclick="ShowNum('5')"/></td>
+			<td><input type="button" id="btn6" value="6" onclick="ShowNum('6')"/></td>
+			<td><input type="button" id="btnSub" value="-" onclick="Sub()" /></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="btn1" value="1" onclick="ShowNum('1')"/></td>
+			<td><input type="button" id="btn2" value="2" onclick="ShowNum('2')"/></td>
+			<td><input type="button" id="btn3" value="3" onclick="ShowNum('3')"/></td>
+			<td><input type="button" id="btnMul" value="*" onclick="Mul()"/></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="btnC" value="C" onclick="Cancel()"/></td>
+			<td><input type="button" id="btn0" value="0" onclick="ShowNum('0')"/></td>
+			<td><input type="button" id="btnEqu" value="=" onclick="Equal()"/></td>
+			<td><input type="button" id="btnDiv" value="/" onclick="Div()"/></td>
+		</tr>
+	</table>
+	</div>
+</div>
+
+</body>
+</html>
