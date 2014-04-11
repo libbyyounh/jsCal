@@ -9,7 +9,7 @@
 		text-align: center;
 	}
 	#panel{
-		background: grey;
+		background: #996633;
 		width: 600px;
 		height: 300px;
 		margin: 0 auto;
@@ -38,6 +38,7 @@
 /*
 	javascript calculator, 
 	code by Younh.
+	just for practice.
 	date:2014/3/17
 */
 var showOneNum=0,showMulNum = 0;//声明存储个位数的变量，以及存储十位数以上的变量
@@ -47,6 +48,7 @@ var num1=0,num2=0;//存储两数，以方便进行计算
 	window.onload=function(){
 		Cancel();
 	}
+	//计算函数
 	function Equal(){
 
 		num2 = document.getElementById('text').value;
@@ -64,6 +66,7 @@ var num1=0,num2=0;//存储两数，以方便进行计算
 			document.getElementById('text').value=Number(num1)/Number(num2);
 		}
 	}
+	//显示数字
 	function ShowNum(num){
 		
 		switch(num){
@@ -194,6 +197,7 @@ var num1=0,num2=0;//存储两数，以方便进行计算
 		}
 
 	}
+	//初始状态
 	function Cancel(){
 		status = 0;
 		
@@ -204,6 +208,7 @@ var num1=0,num2=0;//存储两数，以方便进行计算
 		op=0;
 		document.getElementById('text').value="";
 	}
+	//加
 	function Add(){
 	
 		num1=document.getElementById('text').value;
@@ -213,6 +218,7 @@ var num1=0,num2=0;//存储两数，以方便进行计算
 			op=1;
 			
 	}
+	//减
 	function Sub(){
 		num1=document.getElementById('text').value;
 			status=0;
@@ -221,6 +227,7 @@ var num1=0,num2=0;//存储两数，以方便进行计算
 			op=2;
 		
 	}
+	//乘
 	function Mul(){
 		num1=document.getElementById('text').value;
 			status=0;
@@ -228,6 +235,7 @@ var num1=0,num2=0;//存储两数，以方便进行计算
 			showMulNum=0;
 			op=3;
 	}
+	//除
 	function Div(){
 		num1=document.getElementById('text').value;
 			status=0;
@@ -241,7 +249,6 @@ var num1=0,num2=0;//存储两数，以方便进行计算
 
 <body>
 <p><strong>Javascript Calculator</strong></p>
-<!--<button id="btn" onclick="alert('showOneNum:'+showOneNum+'@showMulNum:'+showMulNum+'@status:'+status+'@op:'+op+'@num1:'+num1+'@num2:'+num2)">Check</button>-->
 <div id="panel">
 	<div id="cal">
 	<table>
